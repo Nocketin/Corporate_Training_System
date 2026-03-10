@@ -1,0 +1,15 @@
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\bin\Debug\net10.0\IdentityService.Application.deps.json
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\bin\Debug\net10.0\IdentityService.Application.dll
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\bin\Debug\net10.0\IdentityService.Application.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\bin\Debug\net10.0\IdentityService.Domain.dll
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\bin\Debug\net10.0\IdentityService.Domain.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.csproj.AssemblyReference.cache
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.AssemblyInfoInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.AssemblyInfo.cs
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.csproj.CoreCompileInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\Identity.52144512.Up2Date
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.dll
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\refint\IdentityService.Application.dll
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\IdentityService.Application.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Application\obj\Debug\net10.0\ref\IdentityService.Application.dll
