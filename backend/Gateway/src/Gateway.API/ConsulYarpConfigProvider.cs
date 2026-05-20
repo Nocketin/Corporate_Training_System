@@ -1,4 +1,5 @@
 using Consul;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 using Yarp.ReverseProxy.Configuration;
 
@@ -7,46 +8,57 @@ namespace Gateway.API;
 public class ConsulYarpConfigProvider : IProxyConfigProvider, IDisposable
 {
     private readonly IConsulClient _consulClient;
+    private readonly ILogger<ConsulYarpConfigProvider> _logger;
     private readonly TimeSpan _reloadInterval;
-    private Timer? _timer;
+    private readonly CancellationTokenSource _reloadCancellationTokenSource = new();
+    private readonly Task _reloadLoopTask;
     private volatile ConsulProxyConfig _currentConfig;
 
-    public ConsulYarpConfigProvider(IConsulClient consulClient)
+    public ConsulYarpConfigProvider(IConsulClient consulClient, ILogger<ConsulYarpConfigProvider> logger)
     {
         _consulClient = consulClient;
+        _logger = logger;
         _reloadInterval = TimeSpan.FromSeconds(10);
         _currentConfig = new ConsulProxyConfig(Array.Empty<RouteConfig>(), Array.Empty<ClusterConfig>());
-        
-        ReloadAsync().GetAwaiter().GetResult();
-        
-        _timer = new Timer(async _ => await ReloadAsync(), null, _reloadInterval, _reloadInterval);
+
+        ReloadAsync(_reloadCancellationTokenSource.Token).GetAwaiter().GetResult();
+        _reloadLoopTask = RunReloadLoopAsync(_reloadCancellationTokenSource.Token);
     }
 
     public IProxyConfig GetConfig()
     {
-        Console.WriteLine($"[Gateway] GetConfig called - Routes: {_currentConfig.Routes.Count}, Clusters: {_currentConfig.Clusters.Count}");
-        foreach (var route in _currentConfig.Routes)
-        {
-            Console.WriteLine($"[Gateway]   Route: {route.RouteId} -> {route.Match.Path} => Cluster: {route.ClusterId}");
-        }
         return _currentConfig;
     }
 
-    private async Task ReloadAsync()
+    private async Task RunReloadLoopAsync(CancellationToken cancellationToken)
+    {
+        using var timer = new PeriodicTimer(_reloadInterval);
+        while (await timer.WaitForNextTickAsync(cancellationToken))
+        {
+            await ReloadAsync(cancellationToken);
+        }
+    }
+
+    private async Task ReloadAsync(CancellationToken cancellationToken)
     {
         try
         {
-            Console.WriteLine($"[Gateway] Reloading configuration from Consul...");
             var services = await _consulClient.Agent.Services();
-            Console.WriteLine($"[Gateway] Found {services.Response.Count} services in Consul");
 
             var routes = new List<RouteConfig>();
             var clusters = new List<ClusterConfig>();
 
             foreach (var service in services.Response.Values)
             {
-                Console.WriteLine($"[Gateway] Processing service: {service.Service} at {service.Address}:{service.Port}");
                 var clusterId = service.Service;
+                var destinationHost = string.IsNullOrWhiteSpace(service.Address)
+                    ? service.Service
+                    : service.Address;
+
+                if (string.IsNullOrWhiteSpace(clusterId) || service.Port <= 0)
+                {
+                    continue;
+                }
 
                 clusters.Add(new ClusterConfig
                 {
@@ -57,7 +69,7 @@ public class ConsulYarpConfigProvider : IProxyConfigProvider, IDisposable
                             $"{clusterId}/dest",
                             new DestinationConfig
                             {
-                                Address = $"http://{service.Address}:{service.Port}"
+                                Address = $"http://{destinationHost}:{service.Port}"
                             }
                         }
                     }
@@ -65,7 +77,6 @@ public class ConsulYarpConfigProvider : IProxyConfigProvider, IDisposable
                 
                 if (string.Equals(clusterId, "IdentityService", StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine($"[Gateway] Creating IdentityService route: /api/auth/{{**catch-all}}");
                     routes.Add(new RouteConfig
                     {
                         RouteId = "identity_auth_route",
@@ -75,7 +86,63 @@ public class ConsulYarpConfigProvider : IProxyConfigProvider, IDisposable
                             Path = "/api/auth/{**catch-all}"
                         }
                     });
-                    Console.WriteLine($"[Gateway] Route added: RouteId=identity_auth_route, Path=/api/auth/{{**catch-all}}, Cluster={clusterId}");
+                }
+                else if (string.Equals(clusterId, "LearningService", StringComparison.OrdinalIgnoreCase))
+                {
+                    routes.Add(new RouteConfig
+                    {
+                        RouteId = "learning_api_root_route",
+                        ClusterId = clusterId,
+                        Order = 10,
+                        Match = new RouteMatch
+                        {
+                            Path = "/api/learning"
+                        }
+                    });
+                    routes.Add(new RouteConfig
+                    {
+                        RouteId = "learning_route",
+                        ClusterId = clusterId,
+                        Order = 20,
+                        Match = new RouteMatch
+                        {
+                            Path = "/api/learning/{**catch-all}"
+                        }
+                    });
+                }
+                else if (string.Equals(clusterId, "CourseService", StringComparison.OrdinalIgnoreCase))
+                {
+                    // List/create use the exact path /api/courses; catch-all does not match without a trailing segment.
+                    routes.Add(new RouteConfig
+                    {
+                        RouteId = "courses_api_root_route",
+                        ClusterId = clusterId,
+                        Order = 10,
+                        Match = new RouteMatch
+                        {
+                            Path = "/api/courses"
+                        }
+                    });
+                    routes.Add(new RouteConfig
+                    {
+                        RouteId = "courses_route",
+                        ClusterId = clusterId,
+                        Order = 20,
+                        Match = new RouteMatch
+                        {
+                            Path = "/api/courses/{**catch-all}"
+                        }
+                    });
+                    routes.Add(new RouteConfig
+                    {
+                        RouteId = "lessons_route",
+                        ClusterId = clusterId,
+                        Order = 20,
+                        Match = new RouteMatch
+                        {
+                            Path = "/api/lessons/{**catch-all}"
+                        }
+                    });
                 }
                 else
                 {
@@ -94,19 +161,29 @@ public class ConsulYarpConfigProvider : IProxyConfigProvider, IDisposable
             var newConfig = new ConsulProxyConfig(routes, clusters);
             _currentConfig = newConfig;
             newConfig.SignalChange();
-            
-            Console.WriteLine($"[Gateway] Configuration reloaded: {routes.Count} routes, {clusters.Count} clusters");
+
+            _logger.LogInformation("Gateway routes reloaded from Consul: {RouteCount} routes, {ClusterCount} clusters", routes.Count, clusters.Count);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[Gateway] ERROR reloading config: {ex.Message}");
-            Console.WriteLine($"[Gateway] Stack trace: {ex.StackTrace}");
+            _logger.LogWarning(ex, "Failed to reload routes from Consul");
         }
     }
 
     public void Dispose()
     {
-        _timer?.Dispose();
+        _reloadCancellationTokenSource.Cancel();
+        try
+        {
+            _reloadLoopTask.GetAwaiter().GetResult();
+        }
+        catch (OperationCanceledException)
+        {
+        }
+        finally
+        {
+            _reloadCancellationTokenSource.Dispose();
+        }
     }
 
     private sealed class ConsulProxyConfig : IProxyConfig

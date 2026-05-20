@@ -1,0 +1,42 @@
+@use '../../styles/variables' as *;
+
+.nav {
+  margin-bottom: $space-5;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.sep {
+  color: $color-text-disabled;
+  user-select: none;
+}
+
+.current {
+  color: $color-text-muted;
+  font-weight: 500;
+}
+
+.item a {
+  color: $color-text-subtle;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/variables' as *;
+
+.banner {
+  margin-bottom: $space-3;
+  padding: $space-2 $space-3;
+  font-size: 14px;
+  color: $color-error-text;
+  background: #fef2f2;
+  border-radius: $radius-sm;
+  border: 1px solid #fecaca;
+}

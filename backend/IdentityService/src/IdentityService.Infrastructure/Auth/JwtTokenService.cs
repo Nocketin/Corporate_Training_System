@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using IdentityService.Application.Auth.Abstractions;
 using IdentityService.Application.Auth.Dtos;
@@ -21,7 +22,7 @@ public class JwtTokenService : ITokenService
         _configuration = configuration;
     }
 
-    public AuthResponse GenerateTokens(User user)
+    public async Task<AuthResponse> GenerateTokensAsync(User user, CancellationToken cancellationToken)
     {
         var jwtSection = _configuration.GetSection("Jwt");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSection["Key"]!));
@@ -39,7 +40,8 @@ public class JwtTokenService : ITokenService
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, jwtId)
+                new Claim(JwtRegisteredClaimNames.Jti, jwtId),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
             }),
             Expires = DateTime.UtcNow.AddMinutes(accessMinutes),
             Issuer = issuer,
@@ -54,7 +56,7 @@ public class JwtTokenService : ITokenService
         {
             UserId = user.Id,
             JwtId = jwtId,
-            Token = Guid.NewGuid().ToString("N"),
+            Token = GenerateSecureRefreshToken(),
             CreatedAt = DateTime.UtcNow,
             ExpiresAt = DateTime.UtcNow.AddDays(refreshDays),
             Used = false,
@@ -62,9 +64,9 @@ public class JwtTokenService : ITokenService
         };
 
         _dbContext.RefreshTokens.Add(refreshToken);
-        _dbContext.SaveChanges();
+        await _dbContext.SaveChangesAsync(cancellationToken);
 
-        return new AuthResponse(accessToken, refreshToken.Token);
+        return new AuthResponse(accessToken, refreshToken.Token, user.Role.ToString());
     }
 
     public async Task<AuthResponse> RefreshTokensAsync(string accessToken, string refreshToken, CancellationToken cancellationToken)
@@ -98,7 +100,10 @@ public class JwtTokenService : ITokenService
             throw new SecurityTokenException("Invalid access token: missing user identifier.");
         }
         
-        var userId = Guid.Parse(subClaim);
+        if (!Guid.TryParse(subClaim, out var userId))
+        {
+            throw new SecurityTokenException("Invalid access token: malformed user identifier.");
+        }
 
         var storedRefresh = await _dbContext.RefreshTokens
             .SingleOrDefaultAsync(x => x.Token == refreshToken, cancellationToken);
@@ -117,7 +122,17 @@ public class JwtTokenService : ITokenService
         await _dbContext.SaveChangesAsync(cancellationToken);
 
         var user = await _dbContext.Users.SingleAsync(x => x.Id == userId, cancellationToken);
-        return GenerateTokens(user);
+        return await GenerateTokensAsync(user, cancellationToken);
+    }
+
+    private static string GenerateSecureRefreshToken()
+    {
+        Span<byte> randomBytes = stackalloc byte[32];
+        RandomNumberGenerator.Fill(randomBytes);
+        return Convert.ToBase64String(randomBytes)
+            .Replace("+", "-")
+            .Replace("/", "_")
+            .TrimEnd('=');
     }
 }
 

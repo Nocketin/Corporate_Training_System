@@ -1,0 +1,15 @@
+@use '../../styles/variables' as *;
+
+.screen {
+  width: 100%;
+  max-width: 380px;
+}
+
+.card {
+  width: 100%;
+  padding: $space-8 $space-6;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-elevated;
+  background: $color-surface;
+  border: 1px solid $color-border;
+}

@@ -5,4 +5,12 @@
     public DateTime UpdatedAt { get; protected set; } = DateTime.UtcNow;
 
     public void UpdateTimestamp() => UpdatedAt = DateTime.UtcNow;
+
+    /// <summary>Assigns fixed identity for migrations and seed data.</summary>
+    public void AssignIdentity(Guid id, DateTime createdAtUtc)
+    {
+        Id = id;
+        CreatedAt = createdAtUtc;
+        UpdatedAt = createdAtUtc;
+    }
 }
