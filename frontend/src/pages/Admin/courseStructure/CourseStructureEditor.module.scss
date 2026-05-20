@@ -1,0 +1,175 @@
+@use '../../../styles/variables' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-4;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-fill-muted;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.moduleCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-4;
+  border-radius: $radius-md;
+  background: $color-surface;
+  border: 1px solid $color-border;
+}
+
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+}
+
+.moduleLabel {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: $color-text-muted;
+}
+
+.lessonCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  padding: $space-3;
+  border-radius: $radius-sm;
+  border: 1px dashed $color-border-input;
+  background: $color-fill-muted;
+}
+
+.resourcesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-top: $space-2;
+  padding-top: $space-2;
+  border-top: 1px solid $color-border;
+}
+
+.resourcesTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: $color-text-subtle;
+}
+
+.resourceRow {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  padding: $space-2;
+  border-radius: $radius-sm;
+  background: $color-surface;
+  border: 1px solid $color-border;
+}
+
+.resourceRowHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+}
+
+.resourceKind {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $color-primary;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: $space-2;
+  border: 1px solid $color-border-input;
+  border-radius: $radius-sm;
+  font-size: 14px;
+  font-family: inherit;
+  color: $color-text;
+  background: $color-surface;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+.fileHint {
+  margin: 0;
+  font-size: 12px;
+  color: $color-text-subtle;
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.btnSecondary,
+.btnDanger,
+.btnGhost {
+  padding: $space-1 $space-2;
+  border-radius: $radius-sm;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btnSecondary {
+  background: $color-surface;
+  border-color: $color-border-input;
+  color: $color-text;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.btnDanger {
+  background: transparent;
+  color: $color-danger;
+  border-color: transparent;
+
+  &:hover {
+    background: #fef2f2;
+  }
+}
+
+.btnGhost {
+  background: $color-primary;
+  color: $color-surface;
+  align-self: flex-start;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}

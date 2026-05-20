@@ -1,0 +1,43 @@
+@use '../../../styles/skeleton' as *;
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.block {
+  display: block;
+  @include skeleton-block;
+}
+
+.title {
+  height: 32px;
+  width: 80%;
+}
+
+.content {
+  height: 200px;
+}
+
+.sideItem {
+  height: 48px;
+}

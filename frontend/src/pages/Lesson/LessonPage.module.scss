@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+.page {
+  padding: $space-6 $space-8 $space-10;
+  max-width: $container-md;
+  margin: 0 auto;
+}
+
+.card {
+  padding: $space-6;
+  border-radius: $radius-xl;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  box-shadow: $shadow-card;
+}
+
+.header {
+  margin-bottom: $space-5;
+  padding-bottom: $space-4;
+  border-bottom: 1px solid $color-border;
+}
+
+.title {
+  margin: 0 0 $space-2;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 700;
+}
+
+.duration {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: $color-text-subtle;
+  background: $color-fill-muted;
+}
+
+.material {
+  margin: $space-4 0 0;
+
+  a {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: $space-4;
+  }
+}

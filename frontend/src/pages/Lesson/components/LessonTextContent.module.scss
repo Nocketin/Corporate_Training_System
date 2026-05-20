@@ -1,0 +1,10 @@
+@use '../../../styles/variables' as *;
+
+.box {
+  margin-top: $space-4;
+  padding: $space-4;
+  background: $color-fill-muted;
+  border-radius: $radius-md;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}

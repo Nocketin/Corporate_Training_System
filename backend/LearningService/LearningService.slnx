@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LearningService.API/LearningService.API.csproj" />
+    <Project Path="src/LearningService.Application/LearningService.Application.csproj" />
+    <Project Path="src/LearningService.Domain/LearningService.Domain.csproj" />
+    <Project Path="src/LearningService.Infrastructure/LearningService.Infrastructure.csproj" />
+    <Project Path="../shared/Platform.Common/src/Platform.Common/Platform.Common.csproj" />
+    <Project Path="../shared/Platform.Contracts/src/Platform.Contracts/Platform.Contracts.csproj" />
+  </Folder>
+</Solution>

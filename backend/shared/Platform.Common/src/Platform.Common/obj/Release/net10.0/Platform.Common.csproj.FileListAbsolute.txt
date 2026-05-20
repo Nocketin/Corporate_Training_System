@@ -1,0 +1,13 @@
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\bin\Release\net10.0\Platform.Common.deps.json
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\bin\Release\net10.0\Platform.Common.dll
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\bin\Release\net10.0\Platform.Common.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.csproj.AssemblyReference.cache
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.AssemblyInfoInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.AssemblyInfo.cs
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.csproj.CoreCompileInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.sourcelink.json
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.dll
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\refint\Platform.Common.dll
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\Platform.Common.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\shared\Platform.Common\src\Platform.Common\obj\Release\net10.0\ref\Platform.Common.dll
