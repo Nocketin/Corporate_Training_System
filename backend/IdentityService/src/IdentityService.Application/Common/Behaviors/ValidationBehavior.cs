@@ -1,5 +1,4 @@
 using FluentValidation;
-using IdentityService.Application.Common.Exceptions;
 using MediatR;
 
 namespace IdentityService.Application.Common.Behaviors;
@@ -33,7 +32,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
 
         if (failures.Any())
         {
-            throw new Exceptions.ValidationException(failures);
+            throw new ValidationException(failures);
         }
 
         return await next();

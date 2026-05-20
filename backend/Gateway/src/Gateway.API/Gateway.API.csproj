@@ -9,11 +9,6 @@
   <ItemGroup>
     <PackageReference Include="Yarp.ReverseProxy" Version="2.1.0" />
     <PackageReference Include="Consul" Version="1.7.14.1" />
-    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\shared\Platform.Common\src\Platform.Common\Platform.Common.csproj" />
   </ItemGroup>
 
 </Project>

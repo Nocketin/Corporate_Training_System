@@ -5,7 +5,7 @@ namespace IdentityService.Application.Auth.Abstractions;
 
 public interface ITokenService
 {
-    Task<AuthResponse> GenerateTokensAsync(User user, CancellationToken cancellationToken);
+    AuthResponse GenerateTokens(User user);
 
     Task<AuthResponse> RefreshTokensAsync(string accessToken, string refreshToken, CancellationToken cancellationToken);
 }

@@ -14,11 +14,8 @@
   <ItemGroup>
     <Compile Include="..\Base\BaseEntity.cs" />
     <Compile Include="..\Logging\SerilogExtensions.cs" />
-    <Compile Include="..\Messaging\MassTransitExtensions.cs" />
     <Compile Include="..\ServiceDiscovery\ConsulRegistrationExtensions.cs" />
     <Compile Include="..\ServiceDiscovery\ConsulService.cs" />
-    <Compile Include="..\Metrics\PlatformMetricsExtensions.cs" />
-    <Compile Include="..\Metrics\PlatformBusinessMetrics.cs" />
   </ItemGroup>
 
  
@@ -29,8 +26,7 @@
 
     
     <PackageReference Include="Consul" Version="1.7.14.1" />
-    <PackageReference Include="MassTransit" Version="8.4.0" />
-    <PackageReference Include="prometheus-net.AspNetCore" Version="8.2.1" />
+    
   </ItemGroup>
 
 </Project>

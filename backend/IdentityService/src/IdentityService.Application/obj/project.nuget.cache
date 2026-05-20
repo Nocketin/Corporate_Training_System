@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "neqNOkjZWAw=",
+  "dgSpecHash": "Tipi/Q78Hpk=",
   "success": true,
   "projectFilePath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Application\\IdentityService.Application.csproj",
   "expectedPackageFiles": [
@@ -46,30 +46,5 @@
     "C:\\Users\\roman.khodulev\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
     "C:\\Users\\roman.khodulev\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-37gx-xxp4-5rgx (уровень серьезности: высокий)",
-      "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Application\\IdentityService.Application.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Application\\IdentityService.Application.csproj",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-w3x6-4m5h-cxqf (уровень серьезности: высокий)",
-      "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Application\\IdentityService.Application.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Application\\IdentityService.Application.csproj",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

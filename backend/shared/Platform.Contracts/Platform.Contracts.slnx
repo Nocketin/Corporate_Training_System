@@ -1,5 +1,0 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/Platform.Contracts/Platform.Contracts.csproj" />
-  </Folder>
-</Solution>

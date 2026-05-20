@@ -2,22 +2,6 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "Confluent.Kafka/2.8.0": {
-        "type": "package",
-        "dependencies": {
-          "librdkafka.redist": "2.8.0"
-        },
-        "compile": {
-          "lib/net8.0/Confluent.Kafka.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Confluent.Kafka.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "FluentValidation/11.9.0": {
         "type": "package",
         "compile": {
@@ -45,110 +29,6 @@
         "runtime": {
           "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
             "related": ".xml"
-          }
-        }
-      },
-      "librdkafka.redist/2.8.0": {
-        "type": "package",
-        "build": {
-          "build/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-arm64"
-          },
-          "runtimes/linux-x64/native/alpine-librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/centos8-librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx-arm64/native/librdkafka.dylib": {
-            "assetType": "native",
-            "rid": "osx-arm64"
-          },
-          "runtimes/osx-x64/native/librdkafka.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/librdkafka.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/librdkafkacpp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libssl-3-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/msvcp140.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/vcruntime140.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/zlib1.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/zstd.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libcrypto-3.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/librdkafka.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/librdkafkacpp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libssl-3.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/msvcp140.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/vcruntime140.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/zlib1.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/zstd.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
           }
         }
       },
@@ -615,66 +495,66 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.0": {
+      "Microsoft.Extensions.Diagnostics.Abstractions/8.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Options": "9.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Options": "8.0.2"
         },
         "compile": {
-          "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/9.0.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.0"
+          "Microsoft.Extensions.Primitives": "8.0.0"
         },
         "compile": {
-          "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Hosting.Abstractions/9.0.0": {
+      "Microsoft.Extensions.Hosting.Abstractions/8.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "9.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "8.0.1",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "compile": {
-          "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net8.0/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.Identity.Core/2.3.0": {
@@ -993,8 +873,7 @@
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "IdentityService.Domain": "1.0.0",
           "MediatR": "14.1.0",
-          "Microsoft.AspNetCore.Identity": "2.3.9",
-          "Platform.Contracts": "1.0.0"
+          "Microsoft.AspNetCore.Identity": "2.3.9"
         },
         "compile": {
           "bin/placeholder/IdentityService.Application.dll": {}
@@ -1012,41 +891,10 @@
         "runtime": {
           "bin/placeholder/IdentityService.Domain.dll": {}
         }
-      },
-      "Platform.Contracts/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/Platform.Contracts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Platform.Contracts.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "Confluent.Kafka/2.8.0": {
-      "sha512": "i5Qb5BPthGXmLRSZWXVLPVNfo9Mxt+UieC+E/ZTFmlGIuPPd57g7Sxp8QP7fYp7qEBXs561jvWDLGaCZqV9ycg==",
-      "type": "package",
-      "path": "confluent.kafka/2.8.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "confluent-logo.png",
-        "confluent.kafka.2.8.0.nupkg.sha512",
-        "confluent.kafka.nuspec",
-        "lib/net462/Confluent.Kafka.dll",
-        "lib/net462/Confluent.Kafka.xml",
-        "lib/net6.0/Confluent.Kafka.dll",
-        "lib/net6.0/Confluent.Kafka.xml",
-        "lib/net8.0/Confluent.Kafka.dll",
-        "lib/net8.0/Confluent.Kafka.xml",
-        "lib/netstandard2.0/Confluent.Kafka.dll",
-        "lib/netstandard2.0/Confluent.Kafka.xml"
-      ]
-    },
     "FluentValidation/11.9.0": {
       "sha512": "VneVlTvwYDkfHV5av3QrQ0amALgrLX6LV94wlYyEsh0B/klJBW7C8y2eAtj5tOZ3jH6CAVpr4s1ZGgew/QWyig==",
       "type": "package",
@@ -1087,53 +935,6 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
-      ]
-    },
-    "librdkafka.redist/2.8.0": {
-      "sha512": "Gg8nPjn9+Sp6X+O1g9duKarCteFQjpkCVJS06ihVQf4PVnR/jPXkN3vwvWe5zP4L47xiEfU+6wIp4pbIvaQ6rQ==",
-      "type": "package",
-      "path": "librdkafka.redist/2.8.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CONFIGURATION.md",
-        "LICENSES.txt",
-        "README.md",
-        "build/librdkafka.redist.props",
-        "build/native/include/librdkafka/rdkafka.h",
-        "build/native/include/librdkafka/rdkafka_mock.h",
-        "build/native/include/librdkafka/rdkafkacpp.h",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafkacpp.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafkacpp.lib",
-        "build/native/librdkafka.redist.targets",
-        "librdkafka.redist.2.8.0.nupkg.sha512",
-        "librdkafka.redist.nuspec",
-        "runtimes/linux-arm64/native/librdkafka.so",
-        "runtimes/linux-x64/native/alpine-librdkafka.so",
-        "runtimes/linux-x64/native/centos8-librdkafka.so",
-        "runtimes/linux-x64/native/librdkafka.so",
-        "runtimes/osx-arm64/native/librdkafka.dylib",
-        "runtimes/osx-x64/native/librdkafka.dylib",
-        "runtimes/win-x64/native/libcrypto-3-x64.dll",
-        "runtimes/win-x64/native/libcurl.dll",
-        "runtimes/win-x64/native/librdkafka.dll",
-        "runtimes/win-x64/native/librdkafkacpp.dll",
-        "runtimes/win-x64/native/libssl-3-x64.dll",
-        "runtimes/win-x64/native/msvcp140.dll",
-        "runtimes/win-x64/native/vcruntime140.dll",
-        "runtimes/win-x64/native/zlib1.dll",
-        "runtimes/win-x64/native/zstd.dll",
-        "runtimes/win-x86/native/libcrypto-3.dll",
-        "runtimes/win-x86/native/libcurl.dll",
-        "runtimes/win-x86/native/librdkafka.dll",
-        "runtimes/win-x86/native/librdkafkacpp.dll",
-        "runtimes/win-x86/native/libssl-3.dll",
-        "runtimes/win-x86/native/msvcp140.dll",
-        "runtimes/win-x86/native/vcruntime140.dll",
-        "runtimes/win-x86/native/zlib1.dll",
-        "runtimes/win-x86/native/zstd.dll"
       ]
     },
     "MediatR/14.1.0": {
@@ -1587,10 +1388,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Diagnostics.Abstractions/9.0.0": {
-      "sha512": "1K8P7XzuzX8W8pmXcZjcrqS6x5eSSdvhQohmcpgiQNY/HlDAlnrhR9dvlURfFz428A+RTCJpUyB+aKTA6AgVcQ==",
+    "Microsoft.Extensions.Diagnostics.Abstractions/8.0.1": {
+      "sha512": "elH2vmwNmsXuKmUeMQ4YW9ldXiF+gSGDgg1vORksob5POnpaI6caj1Hu8zaYbEuibhqCoWg0YRWDazBY3zjBfg==",
       "type": "package",
-      "path": "microsoft.extensions.diagnostics.abstractions/9.0.0",
+      "path": "microsoft.extensions.diagnostics.abstractions/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1599,25 +1400,27 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.Diagnostics.Abstractions.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Diagnostics.Abstractions.targets",
         "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
         "lib/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
-        "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
-        "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.Abstractions.xml",
-        "microsoft.extensions.diagnostics.abstractions.9.0.0.nupkg.sha512",
+        "microsoft.extensions.diagnostics.abstractions.8.0.1.nupkg.sha512",
         "microsoft.extensions.diagnostics.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/9.0.0": {
-      "sha512": "uK439QzYR0q2emLVtYzwyK3x+T5bTY4yWsd/k/ZUS9LR6Sflp8MIdhGXW8kQCd86dQD4tLqvcbLkku8qHY263Q==",
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
+      "sha512": "ZbaMlhJlpisjuWbvXr4LdAst/1XxH3vZ6A0BsgTphZ2L4PGuxRLz7Jr/S7mkAAnOn78Vu0fKhEgNF5JO3zfjqQ==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.abstractions/9.0.0",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1627,25 +1430,25 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.FileProviders.Abstractions.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Abstractions.targets",
         "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
-        "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
-        "lib/net9.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
-        "microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.fileproviders.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Hosting.Abstractions/9.0.0": {
-      "sha512": "yUKJgu81ExjvqbNWqZKshBbLntZMbMVz/P7Way2SBx7bMqA08Mfdc9O7hWDKAiSp+zPUGT6LKcSCQIPeDK+CCw==",
+    "Microsoft.Extensions.Hosting.Abstractions/8.0.1": {
+      "sha512": "nHwq9aPBdBPYXPti6wYEEfgXddfBrYC+CQLn+qISiwQq5tpfaqDZSKOJNxoe9rfQxGf1c+2wC/qWFe1QYJPYqw==",
       "type": "package",
-      "path": "microsoft.extensions.hosting.abstractions/9.0.0",
+      "path": "microsoft.extensions.hosting.abstractions/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1655,19 +1458,21 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.Hosting.Abstractions.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Hosting.Abstractions.targets",
         "lib/net462/Microsoft.Extensions.Hosting.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll",
         "lib/net8.0/Microsoft.Extensions.Hosting.Abstractions.xml",
-        "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.dll",
-        "lib/net9.0/Microsoft.Extensions.Hosting.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Hosting.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Hosting.Abstractions.xml",
-        "microsoft.extensions.hosting.abstractions.9.0.0.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512",
         "microsoft.extensions.hosting.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2228,26 +2033,18 @@
       "type": "project",
       "path": "../IdentityService.Domain/IdentityService.Domain.csproj",
       "msbuildProject": "../IdentityService.Domain/IdentityService.Domain.csproj"
-    },
-    "Platform.Contracts/1.0.0": {
-      "type": "project",
-      "path": "../../../shared/Platform.Contracts/src/Platform.Contracts/Platform.Contracts.csproj",
-      "msbuildProject": "../../../shared/Platform.Contracts/src/Platform.Contracts/Platform.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Confluent.Kafka >= 2.8.0",
       "IdentityService.Application >= 1.0.0",
       "IdentityService.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.Extensions.Caching.Memory >= 9.0.0",
-      "Microsoft.Extensions.Hosting.Abstractions >= 9.0.0",
       "Microsoft.IdentityModel.JsonWebTokens >= 8.14.0",
       "Microsoft.IdentityModel.Tokens >= 8.14.0",
       "Npgsql >= 9.0.2",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.2",
-      "Platform.Contracts >= 1.0.0",
       "System.IdentityModel.Tokens.Jwt >= 8.3.0"
     ]
   },
@@ -2281,9 +2078,6 @@
             },
             "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Domain\\IdentityService.Domain.csproj": {
               "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Domain\\IdentityService.Domain.csproj"
-            },
-            "C:\\Fullstack\\СorporateTrainingSystem\\backend\\shared\\Platform.Contracts\\src\\Platform.Contracts\\Platform.Contracts.csproj": {
-              "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\shared\\Platform.Contracts\\src\\Platform.Contracts\\Platform.Contracts.csproj"
             }
           }
         }
@@ -2304,19 +2098,11 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "Confluent.Kafka": {
-            "target": "Package",
-            "version": "[2.8.0, )"
-          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.0, )"
           },
           "Microsoft.Extensions.Caching.Memory": {
-            "target": "Package",
-            "version": "[9.0.0, )"
-          },
-          "Microsoft.Extensions.Hosting.Abstractions": {
             "target": "Package",
             "version": "[9.0.0, )"
           },
@@ -2634,27 +2420,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-37gx-xxp4-5rgx (уровень серьезности: высокий)",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-w3x6-4m5h-cxqf (уровень серьезности: высокий)",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

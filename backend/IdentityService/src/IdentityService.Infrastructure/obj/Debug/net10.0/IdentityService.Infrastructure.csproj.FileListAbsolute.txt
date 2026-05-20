@@ -15,6 +15,3 @@ C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityServic
 C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\obj\Debug\net10.0\refint\IdentityService.Infrastructure.dll
 C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\obj\Debug\net10.0\IdentityService.Infrastructure.pdb
 C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\obj\Debug\net10.0\ref\IdentityService.Infrastructure.dll
-C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\obj\Debug\net10.0\IdentityService.Infrastructure.sourcelink.json
-C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\bin\Debug\net10.0\Platform.Contracts.dll
-C:\Fullstack\СorporateTrainingSystem\backend\IdentityService\src\IdentityService.Infrastructure\bin\Debug\net10.0\Platform.Contracts.pdb

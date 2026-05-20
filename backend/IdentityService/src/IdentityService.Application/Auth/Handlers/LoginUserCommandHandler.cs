@@ -28,16 +28,16 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, AuthRes
         var user = await _userRepository.GetByEmailAsync(request.Email, cancellationToken);
         if (user is null)
         {
-            throw new UnauthorizedAccessException("Invalid credentials.");
+            throw new InvalidOperationException("Invalid credentials.");
         }
 
         var verification = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.Password);
         if (verification == PasswordVerificationResult.Failed)
         {
-            throw new UnauthorizedAccessException("Invalid credentials.");
+            throw new InvalidOperationException("Invalid credentials.");
         }
 
-        return await _tokenService.GenerateTokensAsync(user, cancellationToken);
+        return _tokenService.GenerateTokens(user);
     }
 }
 
