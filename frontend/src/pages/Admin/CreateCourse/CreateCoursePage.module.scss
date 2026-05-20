@@ -1,0 +1,54 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as m;
+
+.page {
+  padding: $space-6 $space-8 $space-10;
+  max-width: $container-narrow;
+  margin: 0 auto;
+}
+
+.back {
+  font-weight: 500;
+}
+
+.title {
+  margin: $space-4 0 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-top: $space-4;
+}
+
+.error {
+  margin: 0;
+  color: $color-danger;
+  font-weight: 500;
+}
+
+.submit {
+  padding: $space-3 $space-4;
+  border: none;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: $color-surface;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-hover;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.75;
+  }
+
+  @include m.focus-visible-ring;
+}

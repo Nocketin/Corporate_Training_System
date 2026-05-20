@@ -1,0 +1,66 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color-text;
+  background: $color-page-bg;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include m.focus-visible-ring;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+.pageContainer {
+  @include m.container($container-wide);
+}
+
+.pageContainerMd {
+  @include m.container($container-md);
+}
+
+.pageContainerNarrow {
+  @include m.container($container-narrow);
+}

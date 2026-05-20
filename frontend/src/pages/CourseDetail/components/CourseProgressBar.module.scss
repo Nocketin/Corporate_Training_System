@@ -1,0 +1,22 @@
+@use '../../../styles/variables' as *;
+
+.track {
+  height: 12px;
+  background: $color-border;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: var(--progress, 0%);
+  transition: width 0.3s ease;
+}
+
+.fillActive {
+  background: $color-primary;
+}
+
+.fillCompleted {
+  background: #16a34a;
+}

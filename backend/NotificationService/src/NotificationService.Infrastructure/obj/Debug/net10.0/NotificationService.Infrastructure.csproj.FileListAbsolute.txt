@@ -1,0 +1,16 @@
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\bin\Debug\net10.0\NotificationService.Infrastructure.deps.json
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\bin\Debug\net10.0\NotificationService.Infrastructure.dll
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\bin\Debug\net10.0\NotificationService.Infrastructure.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\bin\Debug\net10.0\Platform.Contracts.dll
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\bin\Debug\net10.0\Platform.Contracts.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.csproj.AssemblyReference.cache
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.AssemblyInfoInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.AssemblyInfo.cs
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.sourcelink.json
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\Notifica.C5696791.Up2Date
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.dll
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\refint\NotificationService.Infrastructure.dll
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\NotificationService.Infrastructure.pdb
+C:\Fullstack\СorporateTrainingSystem\backend\NotificationService\src\NotificationService.Infrastructure\obj\Debug\net10.0\ref\NotificationService.Infrastructure.dll

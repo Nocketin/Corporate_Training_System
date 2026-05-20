@@ -724,6 +724,16 @@
         "runtime": {
           "bin/placeholder/IdentityService.Domain.dll": {}
         }
+      },
+      "Platform.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Platform.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Platform.Contracts.dll": {}
+        }
       }
     }
   },
@@ -1699,6 +1709,11 @@
       "type": "project",
       "path": "../IdentityService.Domain/IdentityService.Domain.csproj",
       "msbuildProject": "../IdentityService.Domain/IdentityService.Domain.csproj"
+    },
+    "Platform.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../../../shared/Platform.Contracts/src/Platform.Contracts/Platform.Contracts.csproj",
+      "msbuildProject": "../../../shared/Platform.Contracts/src/Platform.Contracts/Platform.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1707,7 +1722,8 @@
       "FluentValidation.DependencyInjectionExtensions >= 11.9.0",
       "IdentityService.Domain >= 1.0.0",
       "MediatR >= 14.1.0",
-      "Microsoft.AspNetCore.Identity >= 2.3.9"
+      "Microsoft.AspNetCore.Identity >= 2.3.9",
+      "Platform.Contracts >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1737,6 +1753,9 @@
           "projectReferences": {
             "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Domain\\IdentityService.Domain.csproj": {
               "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\IdentityService\\src\\IdentityService.Domain\\IdentityService.Domain.csproj"
+            },
+            "C:\\Fullstack\\СorporateTrainingSystem\\backend\\shared\\Platform.Contracts\\src\\Platform.Contracts\\Platform.Contracts.csproj": {
+              "projectPath": "C:\\Fullstack\\СorporateTrainingSystem\\backend\\shared\\Platform.Contracts\\src\\Platform.Contracts\\Platform.Contracts.csproj"
             }
           }
         }
@@ -2067,5 +2086,27 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-37gx-xxp4-5rgx (уровень серьезности: высокий)",
+      "libraryId": "System.Security.Cryptography.Xml",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "У пакета \"System.Security.Cryptography.Xml\" 8.0.2 есть известная уязвимость https://github.com/advisories/GHSA-w3x6-4m5h-cxqf (уровень серьезности: высокий)",
+      "libraryId": "System.Security.Cryptography.Xml",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

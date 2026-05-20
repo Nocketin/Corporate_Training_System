@@ -1,0 +1,12 @@
+@use '../../../styles/variables' as *;
+
+.text {
+  margin-top: $space-3;
+  font-size: 14px;
+  text-align: center;
+  color: $color-text-muted;
+
+  a {
+    font-weight: 500;
+  }
+}

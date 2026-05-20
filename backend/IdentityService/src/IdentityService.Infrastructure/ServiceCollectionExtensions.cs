@@ -18,6 +18,11 @@ namespace IdentityService.Infrastructure
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITokenService, JwtTokenService>();
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            services.AddScoped<IOutboxWriter, Persistence.EfOutboxWriter>();
+            services.AddScoped<Application.Common.Abstractions.IUnitOfWork>(sp =>
+                sp.GetRequiredService<IdentityDbContext>());
+
+            services.AddHostedService<Messaging.OutboxDispatcherHostedService>();
 
             return services;
         }

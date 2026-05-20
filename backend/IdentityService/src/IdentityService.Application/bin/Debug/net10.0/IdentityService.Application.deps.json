@@ -12,7 +12,8 @@
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "IdentityService.Domain": "1.0.0",
           "MediatR": "14.1.0",
-          "Microsoft.AspNetCore.Identity": "2.3.9"
+          "Microsoft.AspNetCore.Identity": "2.3.9",
+          "Platform.Contracts": "1.0.0"
         },
         "runtime": {
           "IdentityService.Application.dll": {}
@@ -490,6 +491,14 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Platform.Contracts/1.0.0": {
+        "runtime": {
+          "Platform.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -780,6 +789,11 @@
       "hashPath": "system.security.cryptography.xml.8.0.2.nupkg.sha512"
     },
     "IdentityService.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Platform.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

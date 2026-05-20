@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: CTS
+    orgId: 1
+    folder: Corporate Training
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

@@ -1,0 +1,176 @@
+@use '../../styles/variables' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  flex-shrink: 0;
+  padding: $space-5 $space-4;
+  background: $color-sidebar;
+  color: $color-sidebar-text;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin-bottom: $space-8;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.95;
+  }
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-md;
+  background: linear-gradient(135deg, $color-primary, $color-accent);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brandName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brandTagline {
+  font-size: 12px;
+  color: $color-sidebar-muted;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  flex: 1;
+}
+
+.link {
+  display: block;
+  padding: 10px $space-3;
+  border-radius: $radius-md;
+  color: $color-sidebar-muted;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: $color-sidebar-text;
+  }
+}
+
+.linkActive {
+  background: rgba(99, 102, 241, 0.25);
+  color: #fff;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-top: auto;
+  padding-top: $space-5;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.userBadge {
+  font-size: 13px;
+  color: $color-sidebar-muted;
+}
+
+.logoutBtn {
+  padding: 10px $space-3;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: $radius-md;
+  background: transparent;
+  color: $color-sidebar-text;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.authLink {
+  display: block;
+  padding: 10px $space-3;
+  border-radius: $radius-md;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $color-sidebar-text;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  &:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.authLinkPrimary {
+  background: $color-primary;
+  border-color: transparent;
+  color: #fff;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $space-3 $space-4;
+    gap: $space-3;
+  }
+
+  .brand {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex: none;
+    width: 100%;
+    order: 3;
+  }
+
+  .footer {
+    flex-direction: row;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    gap: $space-2;
+  }
+}

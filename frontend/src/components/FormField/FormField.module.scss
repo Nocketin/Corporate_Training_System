@@ -1,0 +1,48 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as m;
+
+.wrap {
+  display: block;
+  margin-bottom: $space-3;
+}
+
+.label {
+  display: block;
+  margin-bottom: $space-1;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: $space-2 $space-2 + 2px;
+  margin-top: $space-1;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border-input;
+  font-size: 16px;
+  line-height: 1.25;
+  color: $color-text;
+  background: $color-surface;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &::placeholder {
+    color: $color-text-disabled;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: #9ca3af;
+  }
+
+  @include m.focus-visible-ring;
+
+  &:focus-visible {
+    border-color: $color-primary;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
